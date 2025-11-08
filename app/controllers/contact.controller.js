@@ -2,29 +2,6 @@ const ContactService = require("../services/contact.service");
 const MongoDB = require("../utils/mongodb.util");
 const ApiError = require("../api-error");
 
-
-exports.create = (req, res) => {
-    res.send({ message: "create handler"});
-};
-exports.findAll = (req, res) => {
-    res.send({ message: "findAll handler"});
-};
-exports.findOne = (req, res) => {
-    res.send({ message: "findOne handler"});
-};
-exports.update = (req, res) => {
-    res.send({ message: "update handler"});
-};
-exports.delete = (req, res) => {
-    res.send({ message: "delete handler"});
-};
-exports.deleteAll = (req, res) => {
-    res.send({ message: "deleteAll handler"});
-};
-exports.findAllfavorite = (req, res) => {
-    res.send({ message: "findAllfavorite handler"});
-};
-
 exports.create = async (req, res, next) => {
     if (!req.body?.name) {
         return next(new ApiError(400, "Name can not be empty"));
@@ -41,9 +18,6 @@ exports.create = async (req, res, next) => {
 
 };
 
-
-
-//ghi chu
 exports.findAll = async (req, res, next) => {
     let documents = [];
 

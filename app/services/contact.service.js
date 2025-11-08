@@ -3,7 +3,7 @@ class ContactService {
     constructor(client) {
         this.Contact = client.db().collection("contacts");
     }
-    //bo t
+
     extractContactData(payload){
         const contact = {
             name: payload.name,
@@ -29,10 +29,7 @@ class ContactService {
      
     }
 
-
-//ghi chu 
-//nam trong class
-async find(filter) {
+    async find(filter) {
         const cursor = await this.Contact.find(filter);
         return await cursor.toArray();
     }
